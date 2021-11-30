@@ -4,7 +4,7 @@ import sys  # In order to terminate the program
 
 serverSocket = socket(AF_INET, SOCK_STREAM)
 # Prepare a sever socket
-HOST = "172.19.128.1"
+HOST = "0.0.0.0"
 PORT = 6789
 
 serverSocket.bind((HOST, PORT))
@@ -21,7 +21,7 @@ while True:
         # outputdata = connectionSocket.recv(1024)
         # Send one HTTP header line into socket
         outputdata = []
-        outputdata.append('HTTP/1.0 200 OK\n\n')
+        outputdata.append('HTTP/1.1 200 OK\n\n')
         outputdata.append(f.read())
         # connectionSocket.sendall(outputdata.encode())
         for i in range(0, len(outputdata)):
